@@ -16,6 +16,20 @@ void PortA_Init() {  //command port (PA5 for RS ,PA6 for R/W, PA7 for E)
 	GPIO_PORTA_DEN_R = 0xE0;          // 7) enable digital pins PA7-PA0        
 }
 
+void PortB_Init(){    // Data port 
+  
+  SYSCTL_RCGCGPIO_R |= 0x02;     // 1) B clock
+  while ((SYSCTL_PRGPIO_R & 0x02) == 0) {};     
+  GPIO_PORTB_LOCK_R = 0x4C4F434B;
+  GPIO_PORTB_CR_R = 0xFF;           // allow changes to PB7-0       
+  GPIO_PORTB_AMSEL_R = 0x00;        // 3) disable analog function
+  GPIO_PORTB_PCTL_R = 0x00000000;   // 4) GPIO clear bit PCTL  
+  GPIO_PORTB_DIR_R = 0xFF;          // 5) PB7-PB0 output   
+  GPIO_PORTB_AFSEL_R = 0x00;        // 6) no alternate function
+  GPIO_PORTB_PUR_R = 0x00;          // disable pullup resistors       
+  GPIO_PORTB_DEN_R = 0xFF;          // 7) enable digital pins PA7-PA0       
+}
+
 void PortD_Init()  // GPS port
 {
 
