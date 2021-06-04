@@ -1,0 +1,9 @@
+#ifndef MAIN_C_SYSTICK_CONFIG_H
+#define MAIN_C_SYSTICK_CONFIG_H
+
+//Delay macros for 16MHZ clock
+#define DELAYMICRO 16
+#define DELAYMILI  16000
+#define DELAYSEC  16000000
+
+#endif //MAIN_C_SYSTICK_CONFIG_H
