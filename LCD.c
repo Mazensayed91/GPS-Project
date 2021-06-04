@@ -43,7 +43,15 @@ void LCD_write_data(unsigned char data){
 }
 
 
-
+void print_screen(char *str1,char *str2){
+    LCD_cmd(CLEAR_DISPLAY);
+    LCD_cmd(FIRST_ROW);
+    delay_ms(2);
+    LCD_string(str1);
+    LCD_cmd(SECOND_ROW);
+    delay_ms(2);
+    LCD_string(str2);
+}
 
 void delay_ms(int n)
 {
