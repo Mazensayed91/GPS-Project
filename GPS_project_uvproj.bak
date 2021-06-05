@@ -425,6 +425,71 @@
               <FileType>1</FileType>
               <FilePath>.\systick.c</FilePath>
             </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\GPS.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPS.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPS.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPS_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPS_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>GPS_private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\GPS_private.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCD_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD_private.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LCD_private.h</FilePath>
+            </File>
+            <File>
+              <FileName>systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\systick.h</FilePath>
+            </File>
+            <File>
+              <FileName>systick_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\systick_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>systick_priv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\systick_priv.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
