@@ -4,6 +4,9 @@
 #include "tm4c123gh6pm.h"
 #include "TM4C123GH6PM2.h"
 #include "stdint.h"
+#include "systick.h"
+#include "systick_config.h"
+#include "systick_priv.h"
 
 void LCD_init(void)
 {
@@ -122,16 +125,10 @@ void print_screen(char *str1,char *str2){
 /* delay n milliseconds (16 MHz CPU clock) */
 void delayMs(int n)
 {
-int i, j;
-for(i = 0 ; i < n; i++)
-for(j = 0; j < 3180; j++)
-{} /* do nothing for 1 ms */
+systick_delay_mili(n);
 } 
 /* delay n microseconds (16 MHz CPU clock) */
 void delayUs(int n)
 {
-int i, j;
-for(i = 0 ; i < n; i++)
-for(j = 0; j < 3; j++)
-{} /* do nothing for 1 us */
+systick_delay_micro(n);
 } 
