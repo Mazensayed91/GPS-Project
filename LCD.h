@@ -5,11 +5,14 @@
 * Preprocessor Macros *
 *******************************************************************************/
 
-void delay_ms(int n);                       /* mili second delay function */
-void delay_us(int n);                       /* micro second delay function */
-void LCD_init(void);                        /* LCD initialization function */
-void LCD_cmd(unsigned char command);        /*Used to send commands to LCD */
-void LCD_write_data(unsigned char data);    /* Writes ASCII character */
-void LCD_string (char *str);	            /* Send string to LCD function */
+void LCD_sendCommand(unsigned char command);
+void LCD_displayCharacter(unsigned char data);
+void LCD_init(void);
+void LCD_displayString(const char *Str);
+void LCD_goToRowColumn(unsigned char row,unsigned char col);
+void LCD_displayStringRowColumn(unsigned char row,unsigned char col,const char *Str);
+void LCD_intgerToString(int data);
+void delayMs(int n);
+void delayUs(int n);
 
 #endif //LCD_DRIVER_LCD_H
