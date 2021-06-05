@@ -12,7 +12,18 @@
 
 int main()
 {
-	
+	LCD_init();
+	while(1)
+	{
+			LCD_displayString("Latitude:");
+			LCD_goToRowColumn(0,9);
+			LCD_displayString("35.67");
+			LCD_goToRowColumn(1,0);
+			LCD_displayString("Longitude:");
+			LCD_goToRowColumn(1,10);
+			LCD_displayString("41.89");
+			delayMs(500);
+	}
 }
 
 void SystemInit(void)
