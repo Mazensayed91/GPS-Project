@@ -59,7 +59,7 @@ void PortF_Init()  // led & switches port
 	GPIO_PORTF_CR_R = 0x1F;
 }
 
-void distance(uint_t32 dis)
+void distance(uint32_t dis)
 {
 	if (dis >= 100) {
 

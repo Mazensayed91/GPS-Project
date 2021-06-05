@@ -42,6 +42,34 @@ void LCD_write_data(unsigned char data){
     delay_ms(1);
 }
 
+void LCD_cmd(unsigned char command){
+    LCD_CTRL &= ~(RS);
+    LCD_CTRL |= EN;
+    delay_us(0);
+    LCD_DATA = (LCD_DATA & 0x0F) | (command & 0xF0);
+    delay_us(0);
+    LCD_CTRL &= ~EN;
+    delay_us(1);
+
+    LCD_CTRL |= EN;
+    delay_us(0);
+    LCD_DATA = (LCD_DATA & 0x0F) | ((command & 0x0F) << 4);
+    delay_us(0);
+    LCD_CTRL &= ~EN;
+    if(command < 4)
+        delay_ms(2);
+    else
+        delay_us(43);
+}
+
+void LCD_string (char *str)	/* Send string to LCD function */
+{
+    int i = 0;
+    while (str[i]!='\0'){
+        LCD_write_data(str[i]);
+        i++;
+    }
+}
 
 void print_screen(char *str1,char *str2){
     LCD_cmd(CLEAR_DISPLAY);
@@ -53,6 +81,7 @@ void print_screen(char *str1,char *str2){
     LCD_string(str2);
 }
 
+/* Milli seconds delay function */
 void delay_ms(int n)
 {
     int i,j;

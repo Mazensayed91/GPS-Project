@@ -1,0 +1,10 @@
+.\main.o: main.c
+.\main.o: tm4c123gh6pm.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\main.o: LCD.h
+.\main.o: LCD_config.h
+.\main.o: LCD_private.h
+.\main.o: GPIO.h
+.\main.o: systick.h
+.\main.o: systick_Priv.h
+.\main.o: systick_config.h
