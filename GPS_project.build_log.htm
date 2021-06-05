@@ -3,55 +3,7 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-D:\GPS Project\GPS-Project\GPS_project.uvproj
+F:\College\Microprocessors\GPS_project\Repo\GPS-Project\GPS_project.uvproj
 Project File Date:  06/05/2021
 
 <h2>Output:</h2>
-Build target 'Target 1'
-compiling main.c...
-LCD_private.h(13): warning:  #1-D: last line of file ends without a newline
-  #endif //LCD_DRIVER_LCD_PRIVATE_H
-GPIO.h(6): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
-  void PortA_Init();
-GPIO.h(7): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
-  void PortB_Init();
-GPIO.h(8): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
-  void PortD_Init();
-GPIO.h(9): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
-  void PortF_Init();
-systick.h(4): warning:  #1295-D: Deprecated declaration systick_init - give arg types
-  void systick_init();
-systick_Priv.h(4): warning:  #47-D: incompatible redefinition of macro "NVIC_ST_CTRL_R" (declared at line 2222 of "tm4c123gh6pm.h")
-  #define NVIC_ST_CTRL_R          (*((volatile unsigned long *)0xE000E010))
-systick_Priv.h(5): warning:  #47-D: incompatible redefinition of macro "NVIC_ST_RELOAD_R" (declared at line 2223 of "tm4c123gh6pm.h")
-  #define NVIC_ST_RELOAD_R        (*((volatile unsigned long *)0xE000E014))
-systick_Priv.h(6): warning:  #47-D: incompatible redefinition of macro "NVIC_ST_CURRENT_R" (declared at line 2224 of "tm4c123gh6pm.h")
-  #define NVIC_ST_CURRENT_R       (*((volatile unsigned long *)0xE000E018))
-main.c(11): warning:  #1295-D: Deprecated declaration SystemInit - give arg types
-  SystemInit();
-main.c(11): warning:  #77-D: this declaration has no storage class or type specifier
-  SystemInit();
-main.c: 11 warnings, 0 errors
-compiling GPIO.c...
-GPIO.h(6): warning:  #1295-D: Deprecated declaration PortA_Init - give arg types
-  void PortA_Init();
-GPIO.h(7): warning:  #1295-D: Deprecated declaration PortB_Init - give arg types
-  void PortB_Init();
-GPIO.h(8): warning:  #1295-D: Deprecated declaration PortD_Init - give arg types
-  void PortD_Init();
-GPIO.h(9): warning:  #1295-D: Deprecated declaration PortF_Init - give arg types
-  void PortF_Init();
-GPIO.c: 4 warnings, 0 errors
-compiling GPS.c...
-GPS.c(31): error:  #268: declaration may not appear after executable statement in block
-      float distance = calculate_distance(a,b);
-GPS.c(32): error:  #29: expected an expression
-      for (int i = 0; i < 5; ++i) {
-GPS.c(32): error:  #20: identifier "i" is undefined
-      for (int i = 0; i < 5; ++i) {
-GPS.c: 0 warnings, 3 errors
-".\GPS_project.axf" - 3 Error(s), 15 Warning(s).
-Target not created
-</pre>
-</body>
-</html>

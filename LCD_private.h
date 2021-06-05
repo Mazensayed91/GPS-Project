@@ -3,6 +3,9 @@
 
 #define LCD_DATA GPIO_PORTB_DATA_R
 #define LCD_CTRL GPIO_PORTB_DATA_R
+
+#define LCD_PORT GPIOB
+#define SET_CURSOR_LOCATION             0x80
 /*******************************************************************************
 *          Connect the controls of the lcd with pins 5,6,7 of Port D           *
 *******************************************************************************/
