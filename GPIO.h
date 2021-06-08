@@ -1,14 +1,14 @@
-#ifndef GPIO
-#define GPIO
+#ifndef MAIN_C_GPIO_H
+#define MAIN_C_GPIO_H
 
-// header body...
+#define GPIO_PIN_10         0x03
+#define GPIO_PIN_1          0x01
+#define GPIO_PCTL_PA0_U0RX      0x00000001
+#define GPIO_PCTL_PA1_U0TX      0x00000010
 
-void PortA_Init();
-void PortB_Init();
-void PortD_Init();
-void PortF_Init();
-void distance(uint32_t dis);
+void initF();
+void initA();
+void initD();
+void distance_100(uint32_t dis);
 
-
-#endif
-
+#endif //MAIN_C_GPIO_H
