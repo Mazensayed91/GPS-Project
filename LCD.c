@@ -1,8 +1,6 @@
 #include "LCD.h"
 #include "LCD_config.h"
 #include "LCD_private.h"
-#include "tm4c123gh6pm.h"
-#include "TM4C123GH6PM2.h"
 #include "stdint.h"
 #include "systick.h"
 #include "systick_config.h"
@@ -122,13 +120,23 @@ void print_screen(char *str1,char *str2){
     LCD_displayString(str2);
 }
 
+////Added functions to convert numbers to string
+void LCD_floatToString(float number, char* storage){
+    sprintf(storage, "%.2f", number);
+}
+
+void LCD_integerToString(int number, char* storage){
+    float x = number;
+    sprintf(storage, "%.0f", x);
+}
+
 /* delay n milliseconds (16 MHz CPU clock) */
 void delayMs(int n)
 {
-systick_delay_mili(n);
+	systick_delay_mili(n);
 } 
 /* delay n microseconds (16 MHz CPU clock) */
 void delayUs(int n)
 {
-systick_delay_micro(n);
+	systick_delay_micro(n);
 } 
