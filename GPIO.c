@@ -1,6 +1,5 @@
 #include "stdint.h"
 #include "GPIO.h"
-#include "tm4c123gh6pm.h"
 #include "TM4C123GH6PM2.h"
 
 

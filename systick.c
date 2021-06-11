@@ -2,7 +2,7 @@
 #include "systick.h"
 #include "systick_Priv.h"
 #include "systick_config.h"
-#include "tm4c123gh6pm.h"
+#include "TM4C123GH6PM.h"
 
 void systick_init(void)
 {
