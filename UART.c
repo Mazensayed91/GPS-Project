@@ -41,4 +41,3 @@ void UART0_write_string(uint8_t *data){
         while((UART0->FR & UART_FR_TXFF) != 0);
         UART0->DR = data[i];
     }
-}
