@@ -11,5 +11,7 @@ typedef struct {
 
 float calculate_distance(point x,point y);
 float degree_to_rad(double degree);
+double string_to_double(char *data);
+point convert_format(char *latitude, char *longitude);
 
 #endif //GPS_DRIVER_GPS_H
