@@ -15,4 +15,11 @@ uint8_t UART0_read(void);
 void UART0_write(uint8_t data);
 void UART0_write_string(uint8_t *data);
 
+void UART2_init(void);
+uint8_t UART2_available(void);
+uint8_t UART2_read(void);
+void UART2_write(uint8_t data);
+void UART2_write_string(uint8_t *data);
+
+
 #endif //UART_H
