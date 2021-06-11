@@ -9,9 +9,10 @@ typedef struct {
     double lon;
 }point;
 
-float calculate_distance(point x,point y);
-float degree_to_rad(double degree);
-double string_to_double(char *data);
+double calculate_distance(point x,point y);
+double degree_to_rad(double degree);
 point convert_format(char *latitude, char *longitude);
+void get_gps_coordinates(void);
+double string_to_double(char *data);
 
 #endif //GPS_DRIVER_GPS_H
