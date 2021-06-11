@@ -42,3 +42,40 @@ void UART0_write_string(uint8_t *data){
         UART0->DR = data[i];
     }
 }
+
+void UART2_init(void){
+    SYSCTL->RCGCUART |= 0x04;
+    ///PORTD should be initialized (if not worked remove the initialization and initialize it here explicitly)
+		initD();
+
+    UART2->CTL &= ~(0x01);
+    ///BRD for 16Mhz clock and 9600 baudrate is 104.16667
+    UART2->IBRD = 104;
+    UART2->FBRD = 11;
+    UART2->LCRH = (UARTA_R0_FEN | UARTA_R0_WLEN_8);
+    UART2->CTL |= (UARTA_R0 | UARTA_RO_RXE | UARTA_RO_TXE);
+
+}
+
+uint8_t UART2_available(void){
+    return ((UART2->FR & UART_FR_RXFE) == UART_FR_RXFE) ? 0 : 1;
+}
+
+uint8_t UART2_read(void){
+    while(UART2_available() != 1);
+    return (uint8_t)(UART2->DR & 0xFF);
+}
+
+
+void UART2_write(uint8_t data){
+    while((UART2->FR & UART_FR_TXFF) != 0);
+    UART2->DR = data;
+}
+
+void UART2_write_string(uint8_t *data){
+  int i;
+	for (i = 0; data[i] != '\0'; ++i) {
+        while((UART2->FR & UART_FR_TXFF) != 0);
+        UART2->DR = data[i];
+    }
+}
