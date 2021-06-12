@@ -1,4 +1,4 @@
-#include "TM4C123GH6PM2.h"
+#include "TM4C123GH6PM.h"
 
 #ifndef LCD_DRIVER_LCD_PRIVATE_H
 #define LCD_DRIVER_LCD_PRIVATE_H

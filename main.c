@@ -13,6 +13,8 @@
 
 #include "TM4C123GH6PM.h"
 #include "LCD.h"
+#include "LCD_config.h"
+#include "LCD_private.h"
 #include "stdint.h"
 #include "systick_config.h"
 #include "systick.h"
@@ -22,8 +24,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "GPS.h"
-#include "GPS_config.h"
-#include "GPS_private.h"
+
 
 char buf[100];
 volatile char ind,flag,stringReceived;
