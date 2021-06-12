@@ -1,6 +1,6 @@
  /******************************************************************************
  *
- * Project: GPS
+ * Project: GPS Tracking System
  *
  * File Name: main.c
  *
@@ -54,12 +54,53 @@ int main(void){
     while((GPIOF->DATA & (0x10)) == 0x10){};
 
     ///Waiting for first data
-    LCD_sendCommand(CLEAR_SCREEN);
+    LCD_sendCommand(CLEAR_DISPLAY);
     LCD_goToRowColumn(0,2);
     LCD_displayString("GPS System");
     LCD_goToRowColumn(1,0);
     LCD_displayString("Waiting Data..");
     delayMs(5000);
+
+    while (1)
+    {
+        get_gps_coordinates();
+        UART0_write_string(latitude);
+        UART0_write(',');
+        UART0_write_string(longitude);
+        UART0_write(';');
+        current = convert_format(latitude, longitude);
+
+        ///Calculate distance
+        if (point_taken) {
+            total_distance += calculate_distance(current, previous);
+            LCD_floatToString((float)total_distance, LCD_text);
+
+            ///Light the red lamp if distance exceeded 100 meter
+            distance_100(total_distance);
+            LCD_goToRowColumn(0, 0);
+            LCD_displayString("Total Distance:");
+            LCD_goToRowColumn(1, 0);
+            LCD_displayString(LCD_text);
+        }
+
+        point_taken = 1;
+        previous = current;
+        ///Test to remove this delay
+        delayMs(2000);
+
+        ///End the trip by pushing switch 1 (pin 4)
+        if ((GPIOF->DATA & (0x10)) == 0x00) {
+            break;
+        }
+        LCD_sendCommand(CLEAR_DISPLAY); // Clear screen
+    }
+    while (1) {
+        LCD_sendCommand(CLEAR_DISPLAY); // Clear screen
+        LCD_goToRowColumn(0, 0);
+        LCD_displayString("Dist traveled:");
+        LCD_goToRowColumn(1, 0);
+        LCD_displayString(LCD_text);
+    }
 }
 
 void SystemInit(void)
